@@ -7,7 +7,23 @@ class DivideTest {
 	@Test
 	void test() {
 		Calc test = new Calc () ;
-		float output = test.divide(4,8);
-		assertEquals (0.5,output);
+		assertEquals (2,test.divide(4,2));
+		assertEquals (-2,test.divide(-4,2));
+		assertEquals (-2,test.divide(4,-2));
+		assertEquals (2,test.divide(-4,-2));
+		assertEquals (0.5,test.divide(2,4));
+		assertEquals (-0.5,test.divide(-2,4));
+		assertEquals (-0.5,test.divide(2,-4));
+		assertEquals (0.5,test.divide(-2,-4));
+		assertEquals (1,test.divide(-2,-2));
+	
+		try {
+			test.divide(4,0);
+		}
+		catch (RuntimeException e) {
+			System.out.println("Undefined Number!");
+		}
+		
 	}
+	
 }
